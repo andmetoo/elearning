@@ -46,19 +46,19 @@ $preparedHtmlString;
 ### Давайте переменным имена, которые легко искать
 
 Bad:
-
 ```php
 // Что тут значит 448?
 $result = $serializer->serialize($data, 448);
+```
 Good:
-
+```php
 $json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+```
 Bad:
-
+```php
 // Что значит 2 для роли?
 $user->updateRole(2);
 ```
-
 Good:
 
 ```php
@@ -1071,7 +1071,7 @@ $calendarEvent = new CalendarEvent(new DateTime("2014-11-13"));
 $nextWeeksSimilarCalendarEvent = new CalendarEvent($calendarEvent->getDate()->modify("+1 week"));
 ```
 
-В данном случае у нас изменится дата для ```$nextWeeksSimilarCalendarEvent``` и для ```$calendarEvent``` так как мы изменили объект доступный о одной ссылке.
+В данном случае у нас изменится дата для ```$nextWeeksSimilarCalendarEvent``` и для ```$calendarEvent``` так как мы изменили объект доступный по одной ссылке.
 
 Good
 
